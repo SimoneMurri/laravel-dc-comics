@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/comics', [GuestComicController::class, 'index'])->name('guest.comics.index');
+Route::post('/comics', [GuestComicController::class, 'store'])->name('guest.comics.store');
+Route::get('/comics/create', [GuestComicController::class, 'create'])->name('guest.comics.create');
 Route::get('/comics/{comic}', [GuestComicController::class, 'show'])->name('guest.comics.show');
