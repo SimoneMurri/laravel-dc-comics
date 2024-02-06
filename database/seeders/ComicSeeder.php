@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Model\Comic;
+use App\Models\Comic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,8 +24,8 @@ class ComicSeeder extends Seeder
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
-            $newComic->artists = $comic['artists'];
-            $newComic->writers = $comic['writers'];
+            $newComic->artists = json_encode($comic['artists']);
+            $newComic->writers = json_encode($comic['writers']);
             $newComic->save();
         }
     }
